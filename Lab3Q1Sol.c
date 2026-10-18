@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <time.h>
 
+/* Why binary search is generally preferred: Binary search needs one main comparison point and halves the search interval. Ternary search checks two points and divides the interval into roughly three parts. Both are logarithmic, but ternary search's extra comparisons generally make it less efficient for searching a sorted array.         */
+
 int binarySearch(int arr[], int n, int x)
 {
     int low = 0, high = n - 1;
@@ -85,3 +87,8 @@ int main()
 
     return 0;
 }
+// Complexity     	Binary search   	Ternary search
+/*Best case	        (O(1)                   O(1)
+Average case    	O(\log n)\)          O(og n)
+Worst case	        O(log_2 n)           O(log_3 n)  2,3 are bases
+Auxiliary (extra) space	(O(1))            O(1)               */
