@@ -37,10 +37,10 @@ int ternarySearch(int arr[], int n, int x)
         if (arr[mid1] == x)
             return mid1;
 
-        if (arr[mid2] == x)
+        else if (arr[mid2] == x)
             return mid2;
 
-        if (x < arr[mid1])
+        else if (x < arr[mid1])
             high = mid1 - 1;
 
         else if (x > arr[mid2])
