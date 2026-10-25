@@ -3,10 +3,10 @@
 - A number, such as 25, 10, or 40.
 - A colour: red (R), blue (B), or yellow (Y).
 We must rearrange the items so that all red items come first, all blue items come next, and all yellow items come last.
-Before sorting
-25, B   10, Y   40, R   15, B
-After sorting by colour
-40, R   25, B   15, B   10, Y   Notice that the number and its colour must stay together. We cannot separate 25 from its colour B.    */
+Before sorting, you give the items in this format:
+25B   10Y   40R   30R   15B
+After sorting by colour, you see:
+(10, R)   (40, R)  (30,R)  (15, B)  (10, Y)   Notice that the number and its colour must stay together. We cannot separate 25 from its colour B.    */
 struct Item { // A struct lets us keep related information together. Here, each item has a number and a colour.
     int number;
     char color;
@@ -22,7 +22,7 @@ int main() {
 - b = 0: no blue items have been stored yet.
 - y = 0: no yellow items have been stored yet*/
 
-    printf("Enter number and color (R/B/Y):\n");
+    printf("Enter number and color (R/B/Y) as: <Number><Colour>:\n");
 
     for (int i = 0; i < n; i++) {
         scanf("%d %c", &red[0].number, &red[0].color); // %c reads a character and stores it in red[0].colour.
