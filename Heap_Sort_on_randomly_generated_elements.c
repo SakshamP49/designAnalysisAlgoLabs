@@ -1,6 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+// YOU HAVE TO FIRST CREATE AN INPUT FILE NAMED "input.txt" IN THE SAME DIRECTORY AS THIS PROGRAM. THE INPUT FILE SHOULD CONTAIN THE NUMBER OF ELEMENTS (given as the first input) FOLLOWED BY THE ELEMENTS THEMSELVES, EACH ON A NEW LINE. FOR EXAMPLE:
+// 5
+// 12
+// 4
+// 7    
+// 1
+// 9
+// THIS PROGRAM WILL READ THE ELEMENTS FROM "input.txt", SORT THEM USING HEAP SORT( but before giving these six elements, you must give size of array as first input).
 void swap(int *a, int *b)
 { int temp = *a;
     *a = *b;
@@ -23,7 +30,7 @@ void heapify(int arr[], int n, int i)
     }
 }
 void heapSort(int arr[], int n)
-{  // Build Max Heap. array is rearranged to satisfy the max-heap property, where each parent node is greater than or equal to its children. This is done by calling heapify() on all non-leaf nodes starting from the last non-leaf node down to the root node. The last non-leaf node is located at index n/2 - 1, and we iterate backwards to the root node at index 0.
+{  // Build Max Heap. array is rearranged to satisfy the max-heap property, where each parent node is greater than or equal to its children. This is done by calling heapify() on all non-leaf nodes starting from the last non-leaf node down to the root node. The last non-leaf node is located at index n/2 - 1 (for zero based indexing) and we iterate backwards to the root node at index 0.
     for (int i = n / 2 - 1; i >= 0; i--)
         heapify(arr, n, i);// The loop iterates from the last non-leaf node (n/2 - 1) down to the root node (index 0). For each node, heapify() is called to ensure that the subtree rooted at that node satisfies the max-heap property. This process effectively builds a max-heap from the unsorted array, preparing it for the sorting phase of the heap sort algorithm.
     // Extract elements from heap
@@ -45,7 +52,7 @@ int main()
     fscanf(inputFile, "%d", &n);
     int *arr = (int *)malloc(n * sizeof(int));
     for (int i = 0; i < n; i++)
-       fscanf(inputFile, "%d", &arr[i]);
+       fscanf(inputFile, "%d", &arr[i]); // Read n elements from the input file and store them in the dynamically allocated array arr. The fscanf() function is used to read each integer from the file, and the loop iterates n times to fill the array with the specified number of elements.
     fclose(inputFile);
     heapSort(arr, n);
     outputFile = fopen("output.txt", "w");
