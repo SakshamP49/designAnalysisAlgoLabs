@@ -8,7 +8,7 @@ void swap(int *a, int *b)
 int partition(int arr[], int low, int high)
 {// The partition() function rearranges the elements in the subarray arr[low..high] around a pivot element. It selects the last element as the pivot and places it in its correct position in the sorted array. All elements less than or equal to the pivot are moved to its left, and all elements greater than the pivot are moved to its right. The function returns the index of the pivot after partitioning.
        int pivot = arr[high];
-    int i = low - 1;
+    int i = low - 1; // Initialize the index of the smaller element. It starts from one position before the low index, as we will increment it when we find elements less than or equal to the pivot.
 
     for (int j = low; j < high; j++)
     { // The loop iterates through the subarray from index low to high-1. For each element arr[j], it checks whether it is less than or equal to the pivot. If it is, the element is swapped with the element at index i, and i is incremented. This ensures that all elements less than or equal to the pivot are placed before index i.
@@ -36,7 +36,7 @@ void quickSort(int arr[], int low, int high)
 }
 
 int main()
-{
+{ // You have to first create an input file named "input.txt" in the same directory as this program. The input file should contain the number of elements (given as the first input) followed by the elements themselves, each on a new line.
     FILE *inputFile, *outputFile;
     int n;
 
